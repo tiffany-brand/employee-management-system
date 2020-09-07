@@ -22,6 +22,26 @@ const viewEmployees = async () => {
     }
 }
 
+const viewRoles = async () => {
+    try {
+        const rows = await empData.getRoles()
+        console.table(rows);
+        init();
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+const viewDepartments = async () => {
+    try {
+        const rows = await empData.getDepartments()
+        console.table(rows);
+        init();
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 // Function to exit the application
 const exitApp = () => {
     console.log('Goodbye.');
@@ -31,6 +51,8 @@ const exitApp = () => {
 const actionFunctions = {
     'View All Employees': viewEmployees,
     // 'View All Employees by Department': viewEmpByDept,
+    'View All Roles': viewRoles,
+    'View All Departments': viewDepartments,
     'Exit Application': exitApp
 }
 
