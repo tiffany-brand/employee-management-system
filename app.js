@@ -4,6 +4,7 @@ const cTable = require('console.table');
 const inquirer = require('inquirer');
 const view = require('./lib/viewFuncs')
 const add = require('./lib/addFuncs')
+const del = require('./lib/delFuncs')
 
 // create a new db access object to access SQL query functions
 const empData = new EmpData(connection);
@@ -29,6 +30,7 @@ const actionFunctions = {
     'Add Role': add.addRole,
     'View All Departments': view.viewDepartments,
     'Add Department': add.addDepartment,
+    'Remove Department': del.delDepartment,
     'Exit Application': exitApp
 }
 
@@ -50,6 +52,7 @@ const action = [
             'Add Role',
             'View All Departments',
             'Add Department',
+            'Remove Department',
             'Exit Application'
         ]
     }
