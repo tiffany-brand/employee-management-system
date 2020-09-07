@@ -26,6 +26,7 @@ const actionFunctions = {
     // 'View All Employees by Department': viewEmpByDept,
     'Add Employee': add.addEmployee,
     'View All Roles': view.viewRoles,
+    'Add Role': add.addRole,
     'View All Departments': view.viewDepartments,
     'Add Department': add.addDepartment,
     'Exit Application': exitApp
@@ -46,9 +47,9 @@ const action = [
             'Update Employee Role',
             'Update Employee Manager',
             'View All Roles',
+            'Add Role',
             'View All Departments',
             'Add Department',
-            'Add Role',
             'Exit Application'
         ]
     }
