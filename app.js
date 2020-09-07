@@ -27,6 +27,7 @@ const actionFunctions = {
     'Add Employee': add.addEmployee,
     'View All Roles': view.viewRoles,
     'View All Departments': view.viewDepartments,
+    'Add Department': add.addDepartment,
     'Exit Application': exitApp
 }
 
