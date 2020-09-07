@@ -25,6 +25,7 @@ const viewEmployees = async () => {
 const viewRoles = async () => {
     try {
         const rows = await empData.getRoles()
+        console.log(rows);
         console.table(rows);
         init();
     } catch (err) {
@@ -42,6 +43,67 @@ const viewDepartments = async () => {
     }
 }
 
+const addEmployee = async () => {
+    try {
+        const roles = await empData.getRoles();
+        const employees = await empData.getEmployees();
+        const newEmp = await promptUser([
+            {
+                type: 'input',
+                message: "Enter the employee's first name:",
+                name: 'empFirst'
+            },
+            {
+                type: 'input',
+                message: "Enter the employee's last name:",
+                name: 'empLast'
+            },
+            {
+                name: "empRole",
+                type: "rawlist",
+                choices: function () {
+                    const choiceArray = [];
+                    roles.forEach((role) => {
+                        const roleObj = {
+                            name: role.title,
+                            value: role.id
+                        }
+                        choiceArray.push(roleObj)
+                    })
+                    return choiceArray;
+                },
+                message: "Choose the employee's role:"
+            },
+            {
+                name: "empMgr",
+                type: "rawlist",
+                choices: function () {
+                    const choiceArray = [{ name: "None", value: null }];
+                    employees.forEach((employee) => {
+                        const mgrObj = {
+                            name: employee.first_name + " " + employee.last_name,
+                            value: employee.id
+                        }
+                        choiceArray.push(mgrObj)
+                    })
+                    choiceArray.push("None")
+                    return choiceArray;
+                },
+                message: "Choose the employee's manager:"
+            },
+
+
+        ]);
+
+        console.log(newEmp);
+
+
+        init();
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 // Function to exit the application
 const exitApp = () => {
     console.log('Goodbye.');
@@ -51,6 +113,7 @@ const exitApp = () => {
 const actionFunctions = {
     'View All Employees': viewEmployees,
     // 'View All Employees by Department': viewEmpByDept,
+    'Add Employee': addEmployee,
     'View All Roles': viewRoles,
     'View All Departments': viewDepartments,
     'Exit Application': exitApp
