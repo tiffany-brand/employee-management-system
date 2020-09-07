@@ -78,7 +78,7 @@ const addEmployee = async () => {
                 name: "empMgr",
                 type: "rawlist",
                 choices: function () {
-                    const choiceArray = [{ name: "None", value: null }];
+                    const choiceArray = [{ name: "None", value: -1 }];
                     employees.forEach((employee) => {
                         const mgrObj = {
                             name: employee.first_name + " " + employee.last_name,
@@ -86,7 +86,6 @@ const addEmployee = async () => {
                         }
                         choiceArray.push(mgrObj)
                     })
-                    choiceArray.push("None")
                     return choiceArray;
                 },
                 message: "Choose the employee's manager:"
@@ -96,7 +95,8 @@ const addEmployee = async () => {
         ]);
 
         console.log(newEmp);
-
+        await empData.createEmployee(newEmp);
+        console.log(`${newEmp.empFirst} ${newEmp.empLast} added!`)
 
         init();
     } catch (err) {
