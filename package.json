@@ -1,0 +1,27 @@
+{
+  "name": "employee-management-system",
+  "version": "1.0.0",
+  "description": "A command line application to view and manage company employees.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiffany-brand/employee-management-system.git"
+  },
+  "author": "Tiffany Brand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiffany-brand/employee-management-system/issues"
+  },
+  "homepage": "https://github.com/tiffany-brand/employee-management-system#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
