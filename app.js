@@ -7,8 +7,6 @@ const add = require('./lib/addFuncs');
 const del = require('./lib/delFuncs');
 const update = require('./lib/updateFuncs');
 
-// create a new db access object to access SQL query functions
-// const empData = new EmpData(connection);
 
 // Use inquirer to prompt user for information
 const promptUser = (questions) => {
@@ -28,6 +26,7 @@ const actionFunctions = {
     'View All Employees by Department': view.viewEmployeesByDept,
     'View All Employees by Manager': view.viewEmployeesByMgr,
     'Add Employee': add.addEmployee,
+    'Remove Employee': del.delEmployee,
     'Update Employee Role': update.updateEmpRole,
     'Update Employee Manager': update.updateEmpMgr,
     'View All Roles': view.viewRoles,
@@ -64,7 +63,9 @@ const action = [
 
 const init = async () => {
     try {
+        console.log("\n------------------------\n")
         const actionChoice = await promptUser(action);
+        console.log("\n------------------------\n")
         await actionFunctions[actionChoice.task]();
         init();
     } catch (err) {
