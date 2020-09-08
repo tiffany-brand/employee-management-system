@@ -25,7 +25,8 @@ const exitApp = () => {
 
 const actionFunctions = {
     'View All Employees': view.viewEmployees,
-    // 'View All Employees by Department': viewEmpByDept,
+    'View All Employees by Department': view.viewEmployeesByDept,
+    'View All Employees by Manager': view.viewEmployeesByMgr,
     'Add Employee': add.addEmployee,
     'Update Employee Role': update.updateEmpRole,
     'View All Roles': view.viewRoles,
