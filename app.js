@@ -8,7 +8,7 @@ const del = require('./lib/delFuncs');
 const update = require('./lib/updateFuncs');
 
 // create a new db access object to access SQL query functions
-const empData = new EmpData(connection);
+// const empData = new EmpData(connection);
 
 // Use inquirer to prompt user for information
 const promptUser = (questions) => {
