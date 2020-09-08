@@ -2,9 +2,10 @@ const EmpData = require('./lib/EmpData');
 const connection = require('./lib/dbConn');
 const cTable = require('console.table');
 const inquirer = require('inquirer');
-const view = require('./lib/viewFuncs')
-const add = require('./lib/addFuncs')
-const del = require('./lib/delFuncs')
+const view = require('./lib/viewFuncs');
+const add = require('./lib/addFuncs');
+const del = require('./lib/delFuncs');
+const update = require('./lib/updateFuncs');
 
 // create a new db access object to access SQL query functions
 const empData = new EmpData(connection);
@@ -26,6 +27,7 @@ const actionFunctions = {
     'View All Employees': view.viewEmployees,
     // 'View All Employees by Department': viewEmpByDept,
     'Add Employee': add.addEmployee,
+    'Update Employee Role': update.updateEmpRole,
     'View All Roles': view.viewRoles,
     'Add Role': add.addRole,
     'View All Departments': view.viewDepartments,
