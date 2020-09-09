@@ -1,6 +1,7 @@
 const EmpData = require('./lib/EmpData');
 const connection = require('./lib/dbConn');
 const cTable = require('console.table');
+const figlet = require('figlet');
 const inquirer = require('inquirer');
 const view = require('./lib/viewFuncs');
 const add = require('./lib/addFuncs');
@@ -73,6 +74,22 @@ const init = async () => {
     }
 };
 
-init();
+const start = () => {
+    figlet('E - M - S', (err, data) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log(data);
+        console.log("\n********************")
+        console.log("\nWelcome to the \nEmployee Management System!")
+        console.log("\n********************")
+        init();
+    })
+
+}
+
+start();
+
+
 
 
