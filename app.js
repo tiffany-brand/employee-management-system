@@ -34,6 +34,7 @@ const actionFunctions = {
     'Add Role': add.addRole,
     'Remove Role': del.delRole,
     'View All Departments': view.viewDepartments,
+    'View Budget by Department': view.viewBudgetByDept,
     'Add Department': add.addDepartment,
     'Remove Department': del.delDepartment,
     'Exit Application': exitApp
@@ -57,6 +58,7 @@ const action = [
             'Add Role',
             'Remove Role',
             'View All Departments',
+            'View Budget by Department',
             'Add Department',
             'Remove Department',
             'Exit Application'
