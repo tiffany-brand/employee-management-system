@@ -17,7 +17,7 @@ const promptUser = (questions) => {
 
 // Function to exit the application
 const exitApp = () => {
-    console.log('Goodbye.');
+    console.log('Goodbye!');
     connection.end();
     process.exit();
 };
@@ -79,14 +79,17 @@ const init = async () => {
 };
 
 const start = () => {
-    figlet('E - M - S', (err, data) => {
+    figlet('     E - M - S', {
+        font: 'Big'
+    }, (err, data) => {
         if (err) {
             console.log(err)
         }
+        console.log("\n")
         console.log(data);
-        console.log("\n********************")
-        console.log("\nWelcome to the \nEmployee Management System!")
-        console.log("\n********************")
+        console.log("       ****************************************")
+        console.log("\n                    Welcome to the \n             Employee Management System!")
+        console.log("\n       ****************************************")
         init();
     })
 
