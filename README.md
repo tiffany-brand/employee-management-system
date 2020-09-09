@@ -44,6 +44,8 @@ To install dependencies, run the following:
 npm i
 `
 
+Then, build and seed the database with the files in the sql folder.
+
 ## Usage
 
 After downloading the files and installing dependencies, run 
