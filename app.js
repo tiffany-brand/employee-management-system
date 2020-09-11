@@ -22,6 +22,7 @@ const exitApp = () => {
     process.exit();
 };
 
+// Object to hold the task functions to fire from inquirer prompt
 const actionFunctions = {
     'View All Employees': view.viewEmployees,
     'View All Employees by Department': view.viewEmployeesByDept,
@@ -40,7 +41,7 @@ const actionFunctions = {
     'Exit Application': exitApp
 }
 
-
+// Inquirer question - list of tasks
 const action = [
     {
         type: 'list',
@@ -66,6 +67,7 @@ const action = [
     }
 ];
 
+// Init prompt user for task to complete
 const init = async () => {
     try {
         console.log("\n------------------------\n")
@@ -78,6 +80,7 @@ const init = async () => {
     }
 };
 
+// Displays start graphic and starts the init function
 const start = () => {
     figlet('     E - M - S', {
         font: 'Big'
